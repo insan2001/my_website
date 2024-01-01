@@ -29,19 +29,19 @@ class _IntroScreenState extends State<IntroScreen> {
       backgroundColor: intro_bg,
       body: Row(
         children: [
-          const SizedBox(
+          SizedBox(
             width: 50,
             child: RotatedBox(
               quarterTurns: 3,
               child: Row(
                 children: [
-                  Spacer(),
-                  Text("LinkedIn"),
+                  const Spacer(),
+                  Image.network("https://raw.githubusercontent.com/insan2001/my_website/main/assets/LinkedIn-Blue-26%402x.png"),
                   Spacer(),
                   Text("Github"),
-                  Spacer(),
+                  const Spacer(),
                   Text("Leetcode"),
-                  Spacer(),
+                  const Spacer(),
                 ],
               ),
             ),
