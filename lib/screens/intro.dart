@@ -28,7 +28,29 @@ class _IntroScreenState extends State<IntroScreen> {
       ),
       backgroundColor: intro_bg,
       body: Row(
-        children: [],
+        children: [
+          const SizedBox(
+            width: 50,
+            child: RotatedBox(
+              quarterTurns: 3,
+              child: Row(
+                children: [
+                  Spacer(),
+                  Text("LinkedIn"),
+                  Spacer(),
+                  Text("Github"),
+                  Spacer(),
+                  Text("Leetcode"),
+                  Spacer(),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.amber,
+            width: MediaQuery.of(context).size.width - 50,
+          ),
+        ],
       ),
     );
   }
