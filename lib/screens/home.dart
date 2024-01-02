@@ -3,24 +3,43 @@ import 'package:flutter/material.dart';
 import 'package:my/constants.dart';
 import 'package:my/custom_widgets/social_media.dart';
 import 'package:my/game/game_space.dart';
+import 'package:my/screens/languages.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeScreen> createState() => HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreenState extends State<HomeScreen> {
+  int index = 0;
+  List<Widget> screens = [
+    GameSpace(),
+    LanguageScreen(),
+    LanguageScreen(),
+    LanguageScreen(),
+    LanguageScreen(),
+    LanguageScreen(),
+    LanguageScreen(),
+  ];
+
+  indexChanger(int updatedIndex) {
+    setState(() {
+      index = updatedIndex;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: CircleAvatar(
-            foregroundImage: Image.asset(
-          "assets/insan.png",
-          filterQuality: FilterQuality.high,
-        ).image),
+          foregroundImage: Image.asset(
+            "assets/insan.png",
+            filterQuality: FilterQuality.high,
+          ).image,
+        ),
         title: AnimatedTextKit(
           animatedTexts: [
             TypewriterAnimatedText(
@@ -32,33 +51,35 @@ class _HomeScreenState extends State<HomeScreen> {
           isRepeatingAnimation: false,
         ),
         centerTitle: true,
-        backgroundColor: intro_bg,
+        backgroundColor: introBg,
       ),
-      backgroundColor: intro_bg,
-      body: Row(
-        children: [
-          const SizedBox(
-            width: 50,
-            child: RotatedBox(
-              quarterTurns: 3,
-              child: Row(
-                children: [
-                  Spacer(),
-                  SocialMediaButton(
-                      imageLocation: "assets/LinkedIn.png",
-                      imageUrl:
-                          "https://www.linkedin.com/in/insan-j-885422299/"),
-                  Spacer(),
-                  SocialMediaButton(
-                      imageLocation: "assets/GitHub.png",
-                      imageUrl: "https://github.com/insan2001"),
-                  Spacer(),
-                ],
+      backgroundColor: introBg,
+      body: SizedBox(
+        child: Row(
+          children: [
+            SizedBox(
+              width: widthSocial,
+              child: const RotatedBox(
+                quarterTurns: 3,
+                child: Row(
+                  children: [
+                    Spacer(),
+                    SocialMediaButton(
+                        imageLocation: "assets/LinkedIn.png",
+                        imageUrl:
+                            "https://www.linkedin.com/in/insan-j-885422299/"),
+                    Spacer(),
+                    SocialMediaButton(
+                        imageLocation: "assets/GitHub.png",
+                        imageUrl: "https://github.com/insan2001"),
+                    Spacer(),
+                  ],
+                ),
               ),
             ),
-          ),
-          GameSpace(),
-        ],
+            screens[index],
+          ],
+        ),
       ),
     );
   }

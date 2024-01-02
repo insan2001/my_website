@@ -11,8 +11,6 @@ class SocialMediaButton extends StatelessWidget {
     final Uri url = Uri.parse(imageUrl);
     if (await canLaunchUrl(url)) {
       launchUrl(url);
-    } else {
-      print("can't launch");
     }
   }
 
