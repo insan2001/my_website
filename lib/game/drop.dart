@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:my/constants.dart';
-import 'package:my/custom_widgets/star.dart';
+import 'package:my/details.dart';
 import 'package:my/game/animated_fold.dart';
+import 'package:my/game/game_space.dart';
 
 class DropZone extends StatefulWidget {
-  final double size;
-  final Color color;
   final GlobalKey<AnimatedFoldState> controller;
-  final Function change;
   const DropZone({
     super.key,
-    required this.size,
-    required this.color,
     required this.controller,
-    required this.change,
   });
 
   @override
@@ -21,42 +16,51 @@ class DropZone extends StatefulWidget {
 }
 
 class _DropZoneState extends State<DropZone> {
-  late Color dropZoneColor;
-  late double dropZondeSize;
+  late Color dzColor;
+  late Widget child;
 
   @override
   void initState() {
-    dropZoneColor = widget.color;
-    dropZondeSize = widget.size;
+    child = Container();
+    dzColor = dropZoneColor;
     super.initState();
   }
 
   @override
-  void didChangeDependencies() {
-    dropZoneColor = widget.color;
-    dropZondeSize = widget.size;
-    super.didChangeDependencies();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return DragTarget<Options>(
-      builder: (context, candidateData, rejectedData) => MyStar(
-        size: dropZondeSize,
-        color: dropZoneColor,
+    return DragTarget<HomeWidget>(
+      builder: (context, candidateData, rejectedData) => AnimatedContainer(
+        decoration: BoxDecoration(
+          color: dzColor,
+          border: Border.all(color: dropBorder),
+          shape: BoxShape.circle,
+        ),
+        duration: const Duration(milliseconds: 200),
+        height: dropZone,
+        width: dropZone,
+        child: Center(
+          child: child,
+        ),
       ),
       onMove: (details) => setState(() {
-        dropZoneColor = Colors.transparent;
+        dzColor = dropZoneIndicator;
       }),
       onLeave: (data) => setState(() {
-        dropZoneColor = Colors.black;
+        dzColor = dropZoneColor;
       }),
-      onAccept: (Options option) async {
+      onAccept: (HomeWidget option) async {
         setState(() {
-          dropZoneColor = option.color;
+          dzColor = dropZoneColor;
+          child = ClipRRect(
+            borderRadius: const BorderRadius.all(Radius.circular(20)),
+            child: Image.asset(
+              option.img,
+              width: dropZone,
+              height: dropZone,
+            ),
+          );
         });
-        await Future.delayed(const Duration(milliseconds: 1000));
-        widget.change(MediaQuery.of(context).size.width, option);
+        changer(screenWidth, option.index);
       },
     );
   }

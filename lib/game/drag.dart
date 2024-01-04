@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:my/constants.dart';
-import 'package:my/custom_widgets/star.dart';
+import 'package:my/custom_widgets/table.dart';
+import 'package:my/details.dart';
+import 'package:my/game/game_space.dart';
 
 class MyDraggable extends StatefulWidget {
-  final Options option;
-  final double height;
-  final double dragSize;
+  final HomeWidget homeWidget;
   const MyDraggable({
     super.key,
-    required this.option,
-    required this.height,
-    required this.dragSize,
+    required this.homeWidget,
   });
 
   @override
@@ -18,39 +15,48 @@ class MyDraggable extends StatefulWidget {
 }
 
 class _MyDraggableState extends State<MyDraggable> {
-  Offset feedbackOffset = Offset(0.0, 0.0);
+  late final Offset feedbackOffset;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: Draggable<Options>(
-        data: widget.option,
-        feedbackOffset: feedbackOffset,
-        feedback: MyStar(size: widget.dragSize, color: widget.option.color),
-        child: Stack(
-          children: [
-            Center(
-              child: Container(
-                color: Colors.amber,
-                child: Padding(
-                  padding: EdgeInsets.all(widget.height / 8),
-                  child: Image.asset(
-                    widget.option.img,
-                  ),
+      margin: EdgeInsets.all(tableHeight / 100),
+      decoration: BoxDecoration(
+          shape: BoxShape.rectangle,
+          borderRadius: const BorderRadius.all(Radius.circular(20)),
+          color: Colors.blue,
+          border: Border.all(
+            width: 2,
+          )),
+      child: isMobile
+          ? GestureDetector(
+              onTap: () {
+                changer(screenHeight, widget.homeWidget.index);
+              },
+              child: HomeTable(homeWidget: widget.homeWidget))
+          : Draggable<HomeWidget>(
+              data: widget.homeWidget,
+              dragAnchorStrategy: (draggable, context, position) =>
+                  Offset(dropZone / 2, dropZone / 2),
+              feedback: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
+                child: Image.asset(
+                  widget.homeWidget.img,
+                  width: dropZone,
+                  height: dropZone,
                 ),
               ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Text(
-                widget.option.text,
-                style: TextStyle(fontSize: widget.height / 10),
+              childWhenDragging: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
+                child: Image.asset(
+                  widget.homeWidget.imgPick,
+                  width: tableWidth / 2,
+                  height: tableWidth / 2,
+                ),
               ),
-            )
-          ],
-        ),
-      ),
+              child: HomeTable(homeWidget: widget.homeWidget),
+            ),
     );
   }
 }

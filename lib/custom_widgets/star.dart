@@ -9,7 +9,7 @@ class MyStar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipPath(
-      clipper: StarClipper(6),
+      clipper: StarClipper(5),
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 1000),
         width: size,

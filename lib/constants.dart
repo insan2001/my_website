@@ -1,20 +1,58 @@
 import 'package:flutter/material.dart';
 
-class Options {
-  final String text;
-  final String img;
-  final int code;
-  final Color color;
-  Options(this.text, this.img, this.code, this.color);
-}
-
-Color introBg = Colors.black;
 double widthSocial = 50;
 
-final options = [
-  Options("Languages", "assets/insan.png", 1, Colors.green),
-  Options("Projects", "assets/insan.png", 2, Colors.blue),
-  Options("Experience", "assets/insan.png", 3, Colors.yellow),
-  Options("Other Skills", "assets/insan.png", 4, Colors.blueGrey),
-  Options("About", "assets/insan.png", 6, Colors.red),
-];
+// colors
+Color introBg = Colors.black;
+Color dropBorder = Colors.black;
+Color dropZoneColor = Colors.black;
+Color screenHider = Colors.black;
+Color homeBg = const Color.fromARGB(220, 158, 158, 158);
+Color doorFrame = const Color.fromARGB(255, 63, 43, 36);
+Color doorBg = Colors.black;
+Color dropZoneIndicator = Colors.green;
+Color langBorder = Colors.blue;
+Color langBg = Colors.white;
+Color langVerified = const Color.fromARGB(255, 4, 236, 81);
+
+// lang
+String flutter = "assets/lang/flutter.png";
+String python = "assets/lang/python.png";
+String dart = "assets/lang/dart.png";
+String html = "assets/lang/html.png";
+String javaScript = "assets/lang/javaScript.png";
+
+// skills
+
+String aftereffects = "assets/skills/aftereffects.png";
+String filmora = "assets/skills/filmora.png";
+String photoShop = "assets/skills/photoshop.png";
+String premierpro = "assets/skills/premierpro.png";
+String word = "";
+String excel = "";
+String git = "";
+
+// home
+
+String langs = "assets/home/programming.png";
+String langsHold = "assets/home/programming_pick.png";
+String projects = "";
+String projectsHold = "";
+String exp = "";
+String expHold = "";
+String skill = "";
+String skillHold = "";
+String certificates = "";
+String certificatesHold = "";
+String about = "";
+String aboutHold = "";
+
+// projects
+
+String valut = "assets/home/insan.png";
+String tubeVanced = "assets/home/insan.png";
+String idsAndroid = "assets/home/insan.png";
+String idsWindows = "assets/home/insan.png";
+String tttP = "assets/home/insan.png";
+String tttF = "assets/home/insan.png";
+String website = "assets/home/insan.png";

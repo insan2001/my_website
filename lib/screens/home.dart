@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:my/constants.dart';
 import 'package:my/custom_widgets/social_media.dart';
 import 'package:my/game/game_space.dart';
-import 'package:my/screens/languages.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,30 +12,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class HomeScreenState extends State<HomeScreen> {
-  int index = 0;
-  List<Widget> screens = [
-    GameSpace(),
-    LanguageScreen(),
-    LanguageScreen(),
-    LanguageScreen(),
-    LanguageScreen(),
-    LanguageScreen(),
-    LanguageScreen(),
-  ];
-
-  indexChanger(int updatedIndex) {
-    setState(() {
-      index = updatedIndex;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: CircleAvatar(
           foregroundImage: Image.asset(
-            "assets/insan.png",
+            "assets/home/insan.png",
             filterQuality: FilterQuality.high,
           ).image,
         ),
@@ -52,6 +34,20 @@ class HomeScreenState extends State<HomeScreen> {
         ),
         centerTitle: true,
         backgroundColor: introBg,
+        actions: [
+          index != 0
+              ? IconButton(
+                  onPressed: () async {
+                    await changer(screenWidth, 0);
+                    setState(() {});
+                  },
+                  icon: const Icon(
+                    Icons.exit_to_app,
+                    color: Colors.red,
+                    size: 40,
+                  ))
+              : Container(),
+        ],
       ),
       backgroundColor: introBg,
       body: SizedBox(
@@ -65,19 +61,19 @@ class HomeScreenState extends State<HomeScreen> {
                   children: [
                     Spacer(),
                     SocialMediaButton(
-                        imageLocation: "assets/LinkedIn.png",
+                        imageLocation: "assets/home/LinkedIn.png",
                         imageUrl:
                             "https://www.linkedin.com/in/insan-j-885422299/"),
                     Spacer(),
                     SocialMediaButton(
-                        imageLocation: "assets/GitHub.png",
+                        imageLocation: "assets/home/GitHub.png",
                         imageUrl: "https://github.com/insan2001"),
                     Spacer(),
                   ],
                 ),
               ),
             ),
-            screens[index],
+            const GameSpace(),
           ],
         ),
       ),
