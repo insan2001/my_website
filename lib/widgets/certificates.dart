@@ -9,7 +9,6 @@ class MyCertificates extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.count(
       crossAxisCount: 1,
-      // mainAxisSpacing: 10,
       children: List.generate(
         myCertificates.length,
         (index) => PhotoView(

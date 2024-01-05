@@ -49,7 +49,7 @@ class Languages extends StatelessWidget {
                   child: Container(
                     padding: EdgeInsets.all(tableWidth / 100),
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 129, 22, 14),
+                      color: langYearBg,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(

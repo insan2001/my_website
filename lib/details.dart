@@ -35,10 +35,10 @@ class Project {
 }
 
 final homeWidget = [
-  HomeWidget("Language", langs, "assets/home/programming_pick.png", 1),
+  HomeWidget("Language", langs, langsHold, 1),
   HomeWidget("Projects", projects, projectsHold, 2),
   HomeWidget("Experience", exp, expHold, 3),
-  HomeWidget("Other Skills", skill, skillHold, 4),
+  HomeWidget("Skills", skill, skillHold, 4),
   HomeWidget("Certificates", certificates, certificatesHold, 5),
   HomeWidget("About", about, aboutHold, 6),
 ];
@@ -57,42 +57,42 @@ final myProjects = [
     flutter,
     "https://github.com/insan2001/secret-vault",
     "An android app to hide your private photos and videos under a game.",
-    valut,
+    android,
   ),
   Project(
     "Tube Vanced",
     flutter,
     "https://github.com/insan2001/tube_vanced",
     "This is a minimal version of YouTube.",
-    tubeVanced,
+    android,
   ),
   Project(
     "ID-Safe-android",
     python,
     "https://github.com/insan2001/id-safe-android",
     "This apply an encryption to a file with certain pasword. This uses python kivy framework.",
-    idsAndroid,
+    android,
   ),
   Project(
     "ID-Safe-windows",
     python,
     "https://github.com/insan2001/id-safe-windows",
     "Its the same project as ID-Safe-android. Instead of kivy its uses tkinter.",
-    idsWindows,
+    android,
   ),
   Project(
     "Tic-tac-toe Pro",
     python,
     "https://github.com/insan2001/Tic-Tac-Toe-PRO",
     "Advance version of tic-tac-toe game based on command prompt/ terminal.",
-    tttP,
+    cmd,
   ),
   Project(
     "Tic-tac-toe Pro",
     flutter,
     "https://github.com/insan2001/tic_tac_toe_pro",
     "It's a GUI version of the above one.",
-    tttF,
+    android,
   ),
   Project(
     "This website",
@@ -123,4 +123,4 @@ final mySkills = [
   git
 ];
 
-final myCertificates = [hackerRank, excel];
+final myCertificates = [hackerRank];

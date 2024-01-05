@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:my/game/game_space.dart';
-import 'package:my/notify.dart';
 import 'package:my/screens/home.dart';
-import 'package:provider/provider.dart';
 
 void main() {
-  index = 5;
-
-  runApp(MultiProvider(providers: [
-    Provider(create: (_) => MyNotifier()),
-  ], child: const MyApp()));
+  index = 0;
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {

@@ -11,13 +11,13 @@ class About extends StatelessWidget {
         Align(
           alignment: Alignment.topCenter,
           child: Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Text(
               "I'm a student. Currently i'm learing flutter and i have 5 year experience with flutter. I'm not good at designing but i'm very well with development.",
               style: TextStyle(
                   fontSize:
                       isMobile ? 20 : MediaQuery.of(context).size.width / 40,
-                  color: Color.fromARGB(255, 12, 26, 228)),
+                  color: const Color.fromARGB(255, 12, 26, 228)),
             ),
           ),
         ),

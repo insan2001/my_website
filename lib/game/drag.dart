@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my/constants.dart';
 import 'package:my/custom_widgets/table.dart';
 import 'package:my/details.dart';
 import 'package:my/game/game_space.dart';
@@ -25,7 +26,7 @@ class _MyDraggableState extends State<MyDraggable> {
       decoration: BoxDecoration(
           shape: BoxShape.rectangle,
           borderRadius: const BorderRadius.all(Radius.circular(20)),
-          color: Colors.blue,
+          color: tableBg,
           border: Border.all(
             width: 2,
           )),

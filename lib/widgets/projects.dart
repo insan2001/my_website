@@ -1,5 +1,6 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:my/constants.dart';
 import 'package:my/details.dart';
 import 'package:my/function/lauch_url.dart';
 import 'package:my/game/game_space.dart';
@@ -20,7 +21,7 @@ class _ProjectsState extends State<Projects> {
       children: List.generate(myProjects.length, (index) {
         Project currentProject = myProjects[index];
         return Card(
-          color: Colors.blue,
+          color: projectBg,
           elevation: 10,
           child: FlipCard(
             flipOnTouch: true,
@@ -68,7 +69,7 @@ class _ProjectsState extends State<Projects> {
                     currentProject.langImg,
                     width: boxSize / 6,
                     height: boxSize / 6,
-                    color: Colors.red,
+                    color: projectLang,
                   ),
                 ),
                 Container(

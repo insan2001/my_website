@@ -30,3 +30,6 @@ flutter:
     - assets/skills/
     - assets/home/
     - assets/certificates/
+    - assets/projects/
+    - assets/home/shadow/
+    - assets/platform/

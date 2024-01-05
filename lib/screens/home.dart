@@ -58,9 +58,9 @@ class MyHomeState extends State<MyHome> {
                         await changer(screenWidth, 0);
                         dropKey.currentState?.child = Container();
                       },
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.exit_to_app,
-                        color: Colors.red,
+                        color: exitColor,
                         size: 40,
                       )),
                 )

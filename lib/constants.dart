@@ -14,23 +14,28 @@ Color dropZoneIndicator = Colors.green;
 Color langBorder = Colors.blue;
 Color langBg = Colors.white;
 Color langVerified = const Color.fromARGB(255, 4, 236, 81);
+Color exitColor = Colors.red;
+Color tableBg = Colors.white;
+Color langYearBg = const Color.fromARGB(255, 129, 22, 14);
+Color projectBg = Colors.blue;
+Color projectLang = Colors.red;
 
 // lang
-String flutter = "assets/lang/flutter.png";
-String python = "assets/lang/python.png";
-String dart = "assets/lang/dart.png";
-String html = "assets/lang/html.png";
-String javaScript = "assets/lang/javaScript.png";
+String flutter = "assets/lang/flutter_rmbg.png";
+String python = "assets/lang/python_rmbg.png";
+String dart = "assets/lang/dart_rmbg.png";
+String html = "assets/lang/html_rmbg.png";
+String javaScript = "assets/lang/js_rmbg.png";
 
 // skills
 
-String aftereffects = "assets/skills/aftereffects.png";
-String filmora = "assets/skills/filmora.png";
-String photoShop = "assets/skills/ps.png";
-String premierpro = "assets/skills/pr.png";
-String word = "assets/skills/word.png";
-String excel = "assets/skills/excel.png";
-String git = "";
+String aftereffects = "assets/skills/ae_rmbg.png";
+String filmora = "assets/skills/filmoram_rmbg.png";
+String photoShop = "assets/skills/ps_rmbg.png";
+String premierpro = "assets/skills/pp_rmbg.png";
+String word = "assets/skills/word_rmbg.png";
+String excel = "assets/skills/excel_rmbg.png";
+String git = "assets/skills/git_rmbg.png";
 
 // certificates
 
@@ -39,24 +44,20 @@ String hackerRank = "assets/certificates/hackeRank.jpg";
 // home
 
 String langs = "assets/home/programming.png";
-String langsHold = "assets/home/programming_pick.png";
-String projects = "assets/home/programming.png";
-String projectsHold = "assets/home/programming.png";
-String exp = "assets/home/programming.png";
-String expHold = "assets/home/programming.png";
-String skill = "assets/home/programming.png";
-String skillHold = "assets/home/programming.png";
-String certificates = "assets/home/programming.png";
-String certificatesHold = "assets/home/programming.png";
-String about = "assets/home/programming.png";
-String aboutHold = "assets/home/programming.png";
+String langsHold = "assets/home/shadow/programming.png";
+String projects = "assets/home/project_rmbg.png";
+String projectsHold = "assets/home/shadow/projects_rmbg.png";
+String exp = "assets/home/exp_rmbg.png";
+String expHold = "assets/home/shadow/experience_rmbg.png";
+String skill = "assets/home/skill.png";
+String skillHold = "assets/home/shadow/skill_rmbg.png";
+String certificates = "assets/home/certificate_rmbg.png";
+String certificatesHold = "assets/home/shadow/certificate.png";
+String about = "assets/home/about_rmbg.png";
+String aboutHold = "assets/home/shadow/about_rmbg.png";
 
 // projects
 
-String valut = "assets/home/insan.png";
-String tubeVanced = "assets/home/insan.png";
-String idsAndroid = "assets/home/insan.png";
-String idsWindows = "assets/home/insan.png";
-String tttP = "assets/home/insan.png";
-String tttF = "assets/home/insan.png";
-String website = "assets/home/insan.png";
+String android = "assets/platform/android_bg.png";
+String website = "assets/platform/website_rmbg.png";
+String cmd = "assets/platform/cmd.png";

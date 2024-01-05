@@ -1,13 +1,13 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:my/game/game_space.dart';
 
 class AnimatedFold extends StatefulWidget {
-  const AnimatedFold(
-      {
-        Key? key,
-        required this.frontWidget,
-        this.animationDuration = const Duration(milliseconds: 1000),
-       }) : super(key: key);
+  const AnimatedFold({
+    Key? key,
+    required this.frontWidget,
+    this.animationDuration = const Duration(milliseconds: 1000),
+  }) : super(key: key);
 
   final Widget? frontWidget;
   final Duration? animationDuration;
@@ -16,22 +16,24 @@ class AnimatedFold extends StatefulWidget {
   AnimatedFoldState createState() => AnimatedFoldState();
 }
 
-class AnimatedFoldState extends State<AnimatedFold> with SingleTickerProviderStateMixin {
-  bool _isOpened = false;
+class AnimatedFoldState extends State<AnimatedFold>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
 
   void toggleFold() {
-    if (_isOpened) {
+    if (index != 0) {
       _animationController.reverse();
     } else {
       _animationController.forward();
     }
-    _isOpened = !_isOpened;
   }
 
   @override
   void initState() {
-    _animationController = AnimationController(vsync: this, duration: widget.animationDuration,);
+    _animationController = AnimationController(
+      vsync: this,
+      duration: widget.animationDuration,
+    );
     super.initState();
   }
 
