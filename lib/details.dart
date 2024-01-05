@@ -1,4 +1,13 @@
+import 'package:flutter/material.dart';
 import 'package:my/constants.dart';
+import 'package:my/game/game_space.dart';
+import 'package:my/widgets/about.dart';
+import 'package:my/widgets/certificates.dart';
+import 'package:my/widgets/experience.dart';
+import 'package:my/widgets/languages.dart';
+import 'package:my/widgets/my_home.dart';
+import 'package:my/widgets/projects.dart';
+import 'package:my/widgets/skills.dart';
 
 class HomeWidget {
   final String text;
@@ -94,6 +103,16 @@ final myProjects = [
   ),
 ];
 
+final List<Widget> screens = [
+  HomeScreen(key: dragKey),
+  const Languages(),
+  const Projects(),
+  const Experience(),
+  const Skills(),
+  const MyCertificates(),
+  const About(),
+];
+
 final mySkills = [
   aftereffects,
   filmora,
@@ -103,3 +122,5 @@ final mySkills = [
   excel,
   git
 ];
+
+final myCertificates = [hackerRank, excel];

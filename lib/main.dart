@@ -5,8 +5,11 @@ import 'package:my/screens/home.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  index = 0;
-  runApp(const MyApp());
+  index = 5;
+
+  runApp(MultiProvider(providers: [
+    Provider(create: (_) => MyNotifier()),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -26,7 +29,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: MyHome(),
     );
   }
 }

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:my/constants.dart';
+import 'package:my/details.dart';
 import 'package:my/game/animated_fold.dart';
 import 'package:my/game/drop.dart';
-import 'package:my/widgets/about.dart';
-import 'package:my/widgets/experience.dart';
-import 'package:my/widgets/languages.dart';
-import 'package:my/widgets/options.dart';
-import 'package:my/widgets/projects.dart';
-import 'package:my/widgets/skills.dart';
+import 'package:my/screens/home.dart';
+import 'package:my/widgets/my_home.dart';
 
 late double screenWidth;
 late double screenHeight;
@@ -19,6 +16,8 @@ late double dropZone;
 late bool isMobile;
 late Function changer;
 late int index;
+final dragKey = GlobalKey<HomeScreenState>();
+final dropKey = GlobalKey<DropZoneState>();
 
 class GameSpace extends StatefulWidget {
   const GameSpace({super.key});
@@ -32,32 +31,20 @@ class _GameSpaceState extends State<GameSpace> {
   bool dragged = false;
 
   final myKey = GlobalKey<AnimatedFoldState>();
-  final List<Widget> screens = const [
-    HomeScreen(),
-    Languages(),
-    Projects(),
-    Experience(),
-    Skills(),
-    About(),
-  ];
 
   change(double size, int index) async {
-    myKey.currentState?.toggleFold();
-    await Future.delayed(const Duration(milliseconds: 1000));
+    dragKey.currentState?.toggleAbsorb();
+    isMobile ? null : myKey.currentState?.toggleFold();
+    isMobile ? null : await Future.delayed(const Duration(milliseconds: 1000));
     setState(() {
       hiddenSize = size;
     });
     await Future.delayed(const Duration(milliseconds: 200));
     indexChanger(index);
     await Future.delayed(const Duration(milliseconds: 200));
+
     setState(() {
       hiddenSize = 0;
-    });
-  }
-
-  indexChanger(int updatedIndex) {
-    setState(() {
-      index = updatedIndex;
     });
   }
 
@@ -126,9 +113,7 @@ class _GameSpaceState extends State<GameSpace> {
                                 Positioned(
                                   left: doorWidth * 0.8,
                                   top: tableHeight * 0.43,
-                                  child: DropZone(
-                                    controller: myKey,
-                                  ),
+                                  child: DropZone(key: dropKey),
                                 )
                               ],
                             ),

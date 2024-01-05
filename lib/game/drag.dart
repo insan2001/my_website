@@ -51,8 +51,8 @@ class _MyDraggableState extends State<MyDraggable> {
                 borderRadius: const BorderRadius.all(Radius.circular(20)),
                 child: Image.asset(
                   widget.homeWidget.imgPick,
-                  width: tableWidth / 2,
-                  height: tableWidth / 2,
+                  width: isMobile ? tableWidth / 2 : tableWidth / 4,
+                  height: isMobile ? tableHeight / 2 : tableHeight / 4,
                 ),
               ),
               child: HomeTable(homeWidget: widget.homeWidget),

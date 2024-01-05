@@ -4,16 +4,28 @@ import 'package:my/constants.dart';
 import 'package:my/custom_widgets/social_media.dart';
 import 'package:my/game/game_space.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+late Function indexChanger;
+
+class MyHome extends StatefulWidget {
+  const MyHome({super.key});
 
   @override
-  State<HomeScreen> createState() => HomeScreenState();
+  State<MyHome> createState() => MyHomeState();
 }
 
-class HomeScreenState extends State<HomeScreen> {
+class MyHomeState extends State<MyHome> {
+  bool absorb = false;
+
+  mySetter(int newIndex) {
+    setState(() {
+      index = newIndex;
+      absorb = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    indexChanger = mySetter;
     return Scaffold(
       appBar: AppBar(
         leading: CircleAvatar(
@@ -36,16 +48,22 @@ class HomeScreenState extends State<HomeScreen> {
         backgroundColor: introBg,
         actions: [
           index != 0
-              ? IconButton(
-                  onPressed: () async {
-                    await changer(screenWidth, 0);
-                    setState(() {});
-                  },
-                  icon: const Icon(
-                    Icons.exit_to_app,
-                    color: Colors.red,
-                    size: 40,
-                  ))
+              ? AbsorbPointer(
+                  absorbing: absorb,
+                  child: IconButton(
+                      onPressed: () async {
+                        setState(() {
+                          absorb = true;
+                        });
+                        await changer(screenWidth, 0);
+                        dropKey.currentState?.child = Container();
+                      },
+                      icon: const Icon(
+                        Icons.exit_to_app,
+                        color: Colors.red,
+                        size: 40,
+                      )),
+                )
               : Container(),
         ],
       ),

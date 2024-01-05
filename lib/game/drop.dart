@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:my/constants.dart';
 import 'package:my/details.dart';
-import 'package:my/game/animated_fold.dart';
 import 'package:my/game/game_space.dart';
 
 class DropZone extends StatefulWidget {
-  final GlobalKey<AnimatedFoldState> controller;
   const DropZone({
     super.key,
-    required this.controller,
   });
 
   @override
-  State<DropZone> createState() => _DropZoneState();
+  State<DropZone> createState() => DropZoneState();
 }
 
-class _DropZoneState extends State<DropZone> {
+class DropZoneState extends State<DropZone> {
   late Color dzColor;
   late Widget child;
 

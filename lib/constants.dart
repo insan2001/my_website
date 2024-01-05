@@ -26,26 +26,30 @@ String javaScript = "assets/lang/javaScript.png";
 
 String aftereffects = "assets/skills/aftereffects.png";
 String filmora = "assets/skills/filmora.png";
-String photoShop = "assets/skills/photoshop.png";
-String premierpro = "assets/skills/premierpro.png";
-String word = "";
-String excel = "";
+String photoShop = "assets/skills/ps.png";
+String premierpro = "assets/skills/pr.png";
+String word = "assets/skills/word.png";
+String excel = "assets/skills/excel.png";
 String git = "";
+
+// certificates
+
+String hackerRank = "assets/certificates/hackeRank.jpg";
 
 // home
 
 String langs = "assets/home/programming.png";
 String langsHold = "assets/home/programming_pick.png";
-String projects = "";
-String projectsHold = "";
-String exp = "";
-String expHold = "";
-String skill = "";
-String skillHold = "";
-String certificates = "";
-String certificatesHold = "";
-String about = "";
-String aboutHold = "";
+String projects = "assets/home/programming.png";
+String projectsHold = "assets/home/programming.png";
+String exp = "assets/home/programming.png";
+String expHold = "assets/home/programming.png";
+String skill = "assets/home/programming.png";
+String skillHold = "assets/home/programming.png";
+String certificates = "assets/home/programming.png";
+String certificatesHold = "assets/home/programming.png";
+String about = "assets/home/programming.png";
+String aboutHold = "assets/home/programming.png";
 
 // projects
 
