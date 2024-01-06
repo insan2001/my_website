@@ -5,20 +5,20 @@ double widthSocial = 50;
 // colors
 Color introBg = Colors.black;
 Color dropBorder = Colors.black;
-Color dropZoneColor = Colors.black;
+Color dropZoneColor = Colors.grey;
 Color screenHider = Colors.black;
 Color homeBg = const Color.fromARGB(220, 158, 158, 158);
 Color doorFrame = const Color.fromARGB(255, 63, 43, 36);
 Color doorBg = Colors.black;
-Color dropZoneIndicator = Colors.green;
+Color dropZoneIndicator = const Color.fromARGB(255, 28, 255, 35);
 Color langBorder = Colors.blue;
-Color langBg = Colors.white;
+Color langBg = Colors.black;
 Color langVerified = const Color.fromARGB(255, 4, 236, 81);
 Color exitColor = Colors.red;
-Color tableBg = Colors.white;
+Color tableBg = Colors.grey;
 Color langYearBg = const Color.fromARGB(255, 129, 22, 14);
-Color projectBg = Colors.blue;
-Color projectLang = Colors.red;
+Color projectBg = const Color.fromARGB(255, 115, 119, 119);
+Color projectLang = const Color.fromARGB(255, 18, 255, 109);
 
 // lang
 String flutter = "assets/lang/flutter_rmbg.png";
@@ -43,21 +43,21 @@ String hackerRank = "assets/certificates/hackeRank.jpg";
 
 // home
 
-String langs = "assets/home/programming.png";
-String langsHold = "assets/home/shadow/programming.png";
-String projects = "assets/home/project_rmbg.png";
-String projectsHold = "assets/home/shadow/projects_rmbg.png";
-String exp = "assets/home/exp_rmbg.png";
-String expHold = "assets/home/shadow/experience_rmbg.png";
-String skill = "assets/home/skill.png";
-String skillHold = "assets/home/shadow/skill_rmbg.png";
-String certificates = "assets/home/certificate_rmbg.png";
+String langs = "assets/home/coding.png";
+String langsHold = "assets/home/shadow/coding.png";
+String projects = "assets/home/projects_rmbg.png";
+String projectsHold = "assets/home/shadow/projects.png";
+String exp = "assets/home/experience_rmbg.png";
+String expHold = "assets/home/shadow/experience.png";
+String skill = "assets/home/skill_rmbg.png";
+String skillHold = "assets/home/shadow/skill.png";
+String certificates = "assets/home/certificate.png";
 String certificatesHold = "assets/home/shadow/certificate.png";
 String about = "assets/home/about_rmbg.png";
-String aboutHold = "assets/home/shadow/about_rmbg.png";
+String aboutHold = "assets/home/shadow/about.png";
 
 // projects
 
-String android = "assets/platform/android_bg.png";
-String website = "assets/platform/website_rmbg.png";
+String android = "assets/platform/android.png";
+String website = "assets/platform/website.png";
 String cmd = "assets/platform/cmd.png";

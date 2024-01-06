@@ -3,7 +3,7 @@ import 'package:my/game/game_space.dart';
 import 'package:my/screens/home.dart';
 
 void main() {
-  index = 0;
+  index = 6;
   runApp(const MyApp());
 }
 

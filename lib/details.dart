@@ -48,7 +48,6 @@ final myLanguages = [
   Language(python, "2019", verified: true),
   Language(javaScript, "2021"),
   Language(dart, "2022", verified: true),
-  Language(flutter, "2022", verified: true),
 ];
 
 final myProjects = [
@@ -56,21 +55,21 @@ final myProjects = [
     "Secret Vault",
     flutter,
     "https://github.com/insan2001/secret-vault",
-    "An android app to hide your private photos and videos under a game.",
+    "Hide your private photos and videos under a game.",
     android,
   ),
   Project(
     "Tube Vanced",
     flutter,
     "https://github.com/insan2001/tube_vanced",
-    "This is a minimal version of YouTube.",
+    "A minimal version of YouTube",
     android,
   ),
   Project(
     "ID-Safe-android",
     python,
     "https://github.com/insan2001/id-safe-android",
-    "This apply an encryption to a file with certain pasword. This uses python kivy framework.",
+    "Apply an encryption to a file with certain pasword. This uses python kivy framework.",
     android,
   ),
   Project(
@@ -78,7 +77,7 @@ final myProjects = [
     python,
     "https://github.com/insan2001/id-safe-windows",
     "Its the same project as ID-Safe-android. Instead of kivy its uses tkinter.",
-    android,
+    cmd,
   ),
   Project(
     "Tic-tac-toe Pro",
@@ -90,8 +89,8 @@ final myProjects = [
   Project(
     "Tic-tac-toe Pro",
     flutter,
-    "https://github.com/insan2001/tic_tac_toe_pro",
-    "It's a GUI version of the above one.",
+    "https://play.google.com/store/apps/details?id=com.insanj.tttp&pli=1",
+    "It's an android version of the tic-tac-toe pro",
     android,
   ),
   Project(
@@ -114,6 +113,7 @@ final List<Widget> screens = [
 ];
 
 final mySkills = [
+  flutter,
   aftereffects,
   filmora,
   premierpro,

@@ -14,7 +14,7 @@ late double topPosition;
 late double doorWidth;
 late double dropZone;
 late bool isMobile;
-late Function changer;
+late Function(double size, int index) changer;
 late int index;
 final dragKey = GlobalKey<HomeScreenState>();
 final dropKey = GlobalKey<DropZoneState>();
@@ -114,6 +114,22 @@ class _GameSpaceState extends State<GameSpace> {
                                   left: doorWidth * 0.8,
                                   top: tableHeight * 0.43,
                                   child: DropZone(key: dropKey),
+                                ),
+                                Positioned(
+                                  top: tableHeight * 0.47,
+                                  left: doorWidth * 0.26,
+                                  child: SizedBox(
+                                    width: doorWidth * 0.5,
+                                    child: Text(
+                                      "Drag to the circle to open the door",
+                                      style: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              60,
+                                          color: Colors.white),
+                                    ),
+                                  ),
                                 )
                               ],
                             ),

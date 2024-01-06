@@ -6,12 +6,10 @@ class Experience extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Card(
-        child: Text(
-          "Still searching for job opportunities....",
-          style: TextStyle(
-            fontSize: 28,
-          ),
+      child: Text(
+        "Still searching for job opportunities....",
+        style: TextStyle(
+          fontSize: 28,
         ),
       ),
     );

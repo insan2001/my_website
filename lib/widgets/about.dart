@@ -13,11 +13,11 @@ class About extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: Text(
-              "I'm a student. Currently i'm learing flutter and i have 5 year experience with flutter. I'm not good at designing but i'm very well with development.",
+              "I started my programing journey with cyber security. I have 1 year experience in cyber security. I felt bored with it and moved on to progrmming. Currently i'm a part time student who learing flutter and i have 5 year experience with python. To be frank i'm a bad designer but a good developer.",
               style: TextStyle(
-                  fontSize:
-                      isMobile ? 20 : MediaQuery.of(context).size.width / 40,
-                  color: const Color.fromARGB(255, 12, 26, 228)),
+                fontSize:
+                    isMobile ? 20 : MediaQuery.of(context).size.width / 40,
+              ),
             ),
           ),
         ),
@@ -35,11 +35,11 @@ class About extends StatelessWidget {
                 const Spacer(),
                 Icon(
                   Icons.email,
-                  color: const Color.fromARGB(255, 17, 248, 25),
+                  color: Colors.black,
                   size: tableWidth / 20,
                 ),
                 const Spacer(),
-                Text(
+                SelectableText(
                   "insan20011227@gmail.com",
                   style: TextStyle(fontSize: tableWidth / 30),
                 ),

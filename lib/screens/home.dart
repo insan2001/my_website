@@ -55,7 +55,7 @@ class MyHomeState extends State<MyHome> {
                         setState(() {
                           absorb = true;
                         });
-                        await changer(screenWidth, 0);
+                        await changer(isMobile ? screenHeight : screenWidth, 0);
                         dropKey.currentState?.child = Container();
                       },
                       icon: Icon(
