@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:my/constants.dart';
 import 'package:my/details.dart';
@@ -27,9 +28,7 @@ class GameSpace extends StatefulWidget {
 
 class _GameSpaceState extends State<GameSpace> {
   double hiddenSize = 0;
-
   bool dragged = false;
-
   final myKey = GlobalKey<AnimatedFoldState>();
 
   change(double size, int index) async {
@@ -55,10 +54,19 @@ class _GameSpaceState extends State<GameSpace> {
   }
 
   @override
+  void didChangeDependencies() {
+    isMobile = defaultTargetPlatform == TargetPlatform.android ||
+        defaultTargetPlatform == TargetPlatform.iOS;
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height;
-    isMobile = screenWidth <= 640;
+    isMobile = defaultTargetPlatform == TargetPlatform.android ||
+        defaultTargetPlatform == TargetPlatform.iOS ||
+        MediaQuery.of(context).size.width <= 640;
 
     tableWidth = isMobile ? screenWidth - widthSocial : screenWidth / 2;
     tableHeight = isMobile ? screenHeight : screenWidth / 3;

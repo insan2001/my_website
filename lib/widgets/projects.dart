@@ -17,7 +17,8 @@ class _ProjectsState extends State<Projects> {
   Widget build(BuildContext context) {
     double boxSize = isMobile ? tableWidth / 2 : tableHeight / 2;
     return GridView.count(
-      crossAxisCount: isMobile ? 2 : 4,
+      crossAxisCount:
+          isMobile || MediaQuery.of(context).size.width <= 640 ? 2 : 4,
       children: List.generate(myProjects.length, (index) {
         Map<String, dynamic> currentProject = myProjects[index];
         return Card(

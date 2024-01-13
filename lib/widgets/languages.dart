@@ -9,7 +9,8 @@ class Languages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-        crossAxisCount: MediaQuery.of(context).size.width <= 640 ? 3 : 5,
+        crossAxisCount:
+            isMobile || MediaQuery.of(context).size.width <= 640 ? 3 : 5,
         physics: const NeverScrollableScrollPhysics(),
         children: List.generate(myLanguages.length, (index) {
           Map<String, dynamic> currentLang = myLanguages[index];

@@ -29,7 +29,7 @@ class _MyDraggableState extends State<MyDraggable> {
           border: Border.all(
             width: 2,
           )),
-      child: isMobile
+      child: isMobile || MediaQuery.of(context).size.width <= 640
           ? GestureDetector(
               onTap: () {
                 changer(screenHeight, widget.homeWidget["index"]);

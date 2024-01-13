@@ -24,7 +24,7 @@ class HomeScreenState extends State<HomeScreen> {
     return AbsorbPointer(
       absorbing: absorb,
       child: GridView.count(
-        physics: MediaQuery.of(context).size.width <= 640
+        physics: isMobile || MediaQuery.of(context).size.width <= 640
             ? null
             : const NeverScrollableScrollPhysics(),
         crossAxisCount: isMobile ? 2 : 3,

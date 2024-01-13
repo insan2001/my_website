@@ -8,16 +8,22 @@ class Skills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      crossAxisCount: MediaQuery.of(context).size.width <= 640
+      crossAxisCount: isMobile || MediaQuery.of(context).size.width <= 640
           ? 2
           : (mySkills.length / 2).ceil(),
       children: List.generate(
         mySkills.length,
         (index) => Container(
-          margin: EdgeInsets.all(tableHeight / 10),
+          margin: EdgeInsets.all(tableWidth / 20),
           child: ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(10)),
-            child: Image.asset(mySkills[index], fit: BoxFit.contain),
+            borderRadius: const BorderRadius.all(Radius.circular(30)),
+            child: Container(
+              color: Colors.black,
+              child: Image.asset(
+                mySkills[index],
+                fit: BoxFit.contain,
+              ),
+            ),
           ),
         ),
       ),
