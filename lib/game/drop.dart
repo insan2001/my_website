@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my/constants.dart';
-import 'package:my/details.dart';
 import 'package:my/game/game_space.dart';
 
 class DropZone extends StatefulWidget {
@@ -25,7 +24,7 @@ class DropZoneState extends State<DropZone> {
 
   @override
   Widget build(BuildContext context) {
-    return DragTarget<HomeWidget>(
+    return DragTarget<Map<String, dynamic>>(
       builder: (context, candidateData, rejectedData) => AnimatedContainer(
         decoration: BoxDecoration(
           color: dzColor,
@@ -45,19 +44,19 @@ class DropZoneState extends State<DropZone> {
       onLeave: (data) => setState(() {
         dzColor = dropZoneColor;
       }),
-      onAccept: (HomeWidget option) async {
+      onAccept: (Map<String, dynamic> option) async {
         setState(() {
           dzColor = dropZoneColor;
           child = ClipRRect(
             borderRadius: const BorderRadius.all(Radius.circular(20)),
             child: Image.asset(
-              option.img,
+              option["image"],
               width: dropZone,
               height: dropZone,
             ),
           );
         });
-        changer(screenWidth, option.index);
+        changer(screenWidth, option["index"]);
       },
     );
   }

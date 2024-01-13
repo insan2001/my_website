@@ -1,0 +1,24 @@
+{
+    "langs": [
+        {
+            "image": "assets/lang/html_rmbg.png",
+            "year": "2017",
+            "verified": false
+        },
+        {
+            "image": "assets/lang/python_rmbg.png",
+            "year": "2019",
+            "verified": true
+        },
+        {
+            "image": "assets/lang/js_rmbg.png",
+            "year": "2021",
+            "verified": false
+        },
+        {
+            "image": "assets/lang/dart_rmbg.png",
+            "year": "2022",
+            "verified": true
+        }
+    ]
+}

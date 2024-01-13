@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:my/constants.dart';
 import 'package:my/custom_widgets/table.dart';
-import 'package:my/details.dart';
 import 'package:my/game/game_space.dart';
 
 class MyDraggable extends StatefulWidget {
-  final HomeWidget homeWidget;
+  final Map<String, dynamic> homeWidget;
   const MyDraggable({
     super.key,
     required this.homeWidget,
@@ -33,17 +32,17 @@ class _MyDraggableState extends State<MyDraggable> {
       child: isMobile
           ? GestureDetector(
               onTap: () {
-                changer(screenHeight, widget.homeWidget.index);
+                changer(screenHeight, widget.homeWidget["index"]);
               },
               child: HomeTable(homeWidget: widget.homeWidget))
-          : Draggable<HomeWidget>(
+          : Draggable<Map<String, dynamic>>(
               data: widget.homeWidget,
               dragAnchorStrategy: (draggable, context, position) =>
                   Offset(dropZone / 2, dropZone / 2),
               feedback: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(20)),
                 child: Image.asset(
-                  widget.homeWidget.img,
+                  widget.homeWidget["image"],
                   width: dropZone,
                   height: dropZone,
                 ),
@@ -51,7 +50,7 @@ class _MyDraggableState extends State<MyDraggable> {
               childWhenDragging: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(20)),
                 child: Image.asset(
-                  widget.homeWidget.imgPick,
+                  widget.homeWidget["imageHolder"],
                   width: isMobile ? tableWidth / 2 : tableWidth / 4,
                   height: isMobile ? tableHeight / 2 : tableHeight / 4,
                 ),

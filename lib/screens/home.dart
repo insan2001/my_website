@@ -30,7 +30,7 @@ class MyHomeState extends State<MyHome> {
       appBar: AppBar(
         leading: CircleAvatar(
           foregroundImage: Image.asset(
-            "assets/home/insan.png",
+            insanImg,
             filterQuality: FilterQuality.high,
           ).image,
         ),

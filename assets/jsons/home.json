@@ -1,0 +1,40 @@
+{
+    "home": [
+        {
+            "name": "Languages",
+            "image": "assets/home/coding.png",
+            "imageHolder": "assets/home/shadow/coding.png",
+            "index": 1
+        },
+        {
+            "name": "Projects",
+            "image": "assets/home/projects_rmbg.png",
+            "imageHolder": "assets/home/shadow/projects.png",
+            "index": 2
+        },
+        {
+            "name": "Experience",
+            "image": "assets/home/experience_rmbg.png",
+            "imageHolder": "assets/home/shadow/experience.png",
+            "index": 3
+        },
+        {
+            "name": "Skills",
+            "image": "assets/home/skill_rmbg.png",
+            "imageHolder": "assets/home/shadow/skill.png",
+            "index": 4
+        },
+        {
+            "name": "Certificates",
+            "image": "assets/home/certificate.png",
+            "imageHolder": "assets/home/shadow/certificate.png",
+            "index": 5
+        },
+        {
+            "name": "About",
+            "image": "assets/home/about_rmbg.png",
+            "imageHolder": "assets/home/shadow/about.png",
+            "index": 6
+        }
+    ]
+}

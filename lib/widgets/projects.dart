@@ -19,7 +19,7 @@ class _ProjectsState extends State<Projects> {
     return GridView.count(
       crossAxisCount: isMobile ? 2 : 4,
       children: List.generate(myProjects.length, (index) {
-        Project currentProject = myProjects[index];
+        Map<String, dynamic> currentProject = myProjects[index];
         return Card(
           color: projectBg,
           elevation: 10,
@@ -29,7 +29,7 @@ class _ProjectsState extends State<Projects> {
               child: Padding(
                 padding: EdgeInsets.all(boxSize / 20),
                 child: Text(
-                  currentProject.description,
+                  currentProject["description"],
                   style: TextStyle(
                       height: 1.2,
                       fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class _ProjectsState extends State<Projects> {
                   child: ClipRRect(
                     borderRadius: const BorderRadius.all(Radius.circular(10)),
                     child: Image.asset(
-                      currentProject.logo,
+                      currentProject["platformImage"],
                       width: isMobile ? boxSize * 0.65 : boxSize / 2,
                       height: isMobile ? boxSize * 0.65 : boxSize / 2,
                       fit: BoxFit.cover,
@@ -56,7 +56,7 @@ class _ProjectsState extends State<Projects> {
                   alignment: Alignment.bottomCenter,
                   padding: EdgeInsets.only(bottom: boxSize / 100),
                   child: Text(
-                    currentProject.name,
+                    currentProject["name"],
                     style: TextStyle(
                         fontSize: isMobile
                             ? MediaQuery.of(context).size.width / 20
@@ -66,7 +66,7 @@ class _ProjectsState extends State<Projects> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
-                    currentProject.langImg,
+                    currentProject["image"],
                     width: boxSize / 6,
                     height: boxSize / 6,
                     color: projectLang,
@@ -81,7 +81,7 @@ class _ProjectsState extends State<Projects> {
                       size: isMobile ? boxSize / 6 : boxSize / 8,
                     ),
                     onPressed: () {
-                      launchMyUrl(currentProject.link);
+                      launchMyUrl(currentProject["url"]);
                     },
                   ),
                 )

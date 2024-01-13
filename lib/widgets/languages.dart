@@ -12,7 +12,7 @@ class Languages extends StatelessWidget {
         crossAxisCount: MediaQuery.of(context).size.width <= 640 ? 3 : 5,
         physics: const NeverScrollableScrollPhysics(),
         children: List.generate(myLanguages.length, (index) {
-          Language currentLang = myLanguages[index];
+          Map<String, dynamic> currentLang = myLanguages[index];
           return Stack(
             children: [
               Container(
@@ -28,11 +28,11 @@ class Languages extends StatelessWidget {
                   backgroundColor: langBg,
                   radius: tableWidth,
                   foregroundImage: Image.asset(
-                    currentLang.img,
+                    currentLang["image"],
                   ).image,
                 ),
               ),
-              currentLang.verified
+              currentLang["verified"]
                   ? Positioned(
                       top: isMobile ? 20 : 0,
                       left: isMobile ? 20 : 0,
@@ -53,7 +53,7 @@ class Languages extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(
-                      currentLang.year,
+                      currentLang["year"],
                       style: TextStyle(
                           color: Colors.white, fontSize: tableWidth / 50),
                     ),

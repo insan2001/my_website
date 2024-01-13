@@ -1,0 +1,53 @@
+{
+    "projects": [
+        {
+            "name": "Secret Vault",
+            "image": "assets/lang/flutter_rmbg.png",
+            "url": "https://github.com/insan2001/secret-vault",
+            "description": "Hide your private photos and videos under a game",
+            "platformImage": "assets/platform/android.png"
+        },
+        {
+            "name": "Tube Vanced",
+            "image": "assets/lang/flutter_rmbg.png",
+            "url": "https://github.com/insan2001/tube_vanced",
+            "description": "A minimal version of YouTube",
+            "platformImage": "assets/platform/android.png"
+        },
+        {
+            "name": "ID-Safe-android",
+            "image": "assets/lang/python_rmbg.png",
+            "url": "https://github.com/insan2001/id-safe-android",
+            "description": "Apply an encryption to a file with certain pasword",
+            "platformImage": "assets/platform/android.png"
+        },
+        {
+            "name": "ID-Safe-windows",
+            "image": "assets/lang/python_rmbg.png",
+            "url": "https://github.com/insan2001/id-safe-windows",
+            "description": "Apply an encryption to a file with certain pasword",
+            "platformImage": ""
+        },
+        {
+            "name": "Tic-tac-toe Pro",
+            "image": "assets/lang/python_rmbg.png",
+            "url": "https://github.com/insan2001/Tic-Tac-Toe-PRO",
+            "description": "Tic-tac-toe inside tic-tac-toe",
+            "platformImage": "assets/platform/cmd.png"
+        },
+        {
+            "name": "Tic-tac-toe Pro",
+            "image": "assets/lang/flutter_rmbg.png",
+            "url": "https://play.google.com/store/apps/details?id=com.insanj.tttp&pli=1",
+            "description": "Tic-tac-toe inside tic-tac-toe",
+            "platformImage": "assets/platform/android.png"
+        },
+        {
+            "name": "My portfolio",
+            "image": "assets/lang/flutter_rmbg.png",
+            "url": "https://github.com/insan2001/my_website",
+            "description": "This website",
+            "platformImage": "assets/platform/website.png"
+        }
+    ]
+}
